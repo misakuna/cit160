@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Vehicle Registration</title>
+    <script>
+        function getTotalDue() {
+            // DECLARATIONS
+                let totalAmountDue = 100;
+            // INPUT
+                const fullname = document.querySelector('#fullname').value;
+                const make = document.querySelector('#make').value;
+                const model = document.querySelector('#model').value;
+                let discount = document.querySelector('#discount').value;
+            // PROCESSING
+                total = totalAmountDue - discount;
+            // OUTPUT
+                document.querySelector('#total').innerHTML = `Total Amount Due: $${total.toFixed(2)}`;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Vehicle Registration</h1>
+    </header>
+    <main>
+        <label for="fullname">Owner Full Name: </label>
+        <input type="text" id="fullname">
+        <label for="make">Vehicle Make: </label>
+        <input type="text" id="make">
+        <label for="make">Vehicle Model: </label>
+        <input type="text" id="model">
+        <label for="discount">Discount Amount: </label><input type="number" id="discount">
+        <div class="processing"><button onclick="getTotalDue()">Compute Total</button></div>
+    </div>
+    <hr>
+    <p id="total"></p>
+    </main>
+    <footer>©️2022 .:|:. Brother Misa .:|:. CIT 160 at BYU-Idaho</footer>
+     
+</body>
+</html>
+
