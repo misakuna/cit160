@@ -59,18 +59,18 @@
             let taxed = 0;
 
             q1 = parseInt(document.querySelector('#q1').value);
-            p1 = parseInt(document.querySelector('#p1').value);
+            p1 = parseFloat(document.querySelector('#p1').value);
             q2 = parseInt(document.querySelector('#q2').value);
-            p2 = parseInt(document.querySelector('#p2').value);
+            p2 = parseFloat(document.querySelector('#p2').value);
             q3 = parseInt(document.querySelector('#q3').value);
-            p3 = parseInt(document.querySelector('#p3').value);
+            p3 = parseFloat(document.querySelector('#p3').value);
             discount = parseFloat(document.querySelector('#discount').value);
             tax = parseFloat(document.querySelector('#tax').value);
             
             // PROCESSING
             total1 = q1 * p1;
             total2 = q2 * p2;
-            toatl3 = q3 * p3;
+            total3 = q3 * p3;
             subtotal = total1 + total2 + total3;
             discounted = subtotal - subtotal * discount;
             taxed = discounted + discounted * tax;
