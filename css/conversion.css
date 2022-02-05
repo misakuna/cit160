@@ -58,7 +58,7 @@ input, button, textarea, select {
 
 button {
 	font-size: larger;
-
+    cursor: pointer;
 	width: 100%;
 }
 

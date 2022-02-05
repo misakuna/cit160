@@ -10,6 +10,8 @@
     <header>
         <h1>Pounds to Kilograms</h1>
         <h2>James Misa</h2>
+        <div class="process"><button id="returnHome">Home</button>
+        </div>
     </header>
     <main>
         <h3>Pounds</h3>
@@ -27,6 +29,8 @@
     </footer>
     <script>
         document.querySelector('#copyright').textContent = new Date().getFullYear();
+        document.getElementById("returnHome").onclick = function () {
+        location.href = "index.html"; };
         function convertToKilos() {
             // DECLARATIONS
                 const kilos = 0.454;

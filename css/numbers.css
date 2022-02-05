@@ -71,6 +71,7 @@ input, button, textarea, select {
 button {
 	font-size: larger;
 	width: 100%;
+	cursor: pointer;
 }
 
 .process {

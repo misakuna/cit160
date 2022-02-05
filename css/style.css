@@ -51,6 +51,7 @@ input, button {
 
 button {
 	width: 100%;
+	cursor: pointer;
 }
 .processing {
 	grid-column: 1/3;

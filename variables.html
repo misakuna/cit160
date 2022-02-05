@@ -5,25 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Vehicle Registration</title>
-    <script>
-        function getTotalDue() {
-            // DECLARATIONS
-                let totalAmountDue = 100;
-            // INPUT
-                const fullname = document.querySelector('#fullname').value;
-                const make = document.querySelector('#make').value;
-                const model = document.querySelector('#model').value;
-                let discount = document.querySelector('#discount').value;
-            // PROCESSING
-                total = totalAmountDue - discount;
-            // OUTPUT
-                document.querySelector('#total').innerHTML = `Total Amount Due: $${total.toFixed(2)}`;
-        }
-    </script>
 </head>
 <body>
     <header>
         <h1>Vehicle Registration</h1>
+        <div class="process"><button id="returnHome">Home</button>
+        </div>
     </header>
     <main>
         <label for="fullname">Owner Full Name: </label>
@@ -40,6 +27,23 @@
     </main>
     <footer>©️2022 .:|:. Brother Misa .:|:. CIT 160 at BYU-Idaho</footer>
      
+    <script>
+        document.getElementById("returnHome").onclick = function () {
+        location.href = "index.html"; };
+        function getTotalDue() {
+            // DECLARATIONS
+                let totalAmountDue = 100;
+            // INPUT
+                const fullname = document.querySelector('#fullname').value;
+                const make = document.querySelector('#make').value;
+                const model = document.querySelector('#model').value;
+                let discount = document.querySelector('#discount').value;
+            // PROCESSING
+                total = totalAmountDue - discount;
+            // OUTPUT
+                document.querySelector('#total').innerHTML = `Total Amount Due: $${total.toFixed(2)}`;
+        }
+    </script>
 </body>
 </html>
 

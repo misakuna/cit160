@@ -10,6 +10,8 @@
     <header>
         <h1>Sales Slip</h1>
         <h2>James Misa</h2>
+        <div class="process"><button id="returnHome">Home</button>
+        </div>
     </header>
     <main>
         <h3>Line Items</h3>
@@ -41,6 +43,8 @@
     </footer>
     <script>
         document.querySelector('#copyright').textContent = new Date().getFullYear();
+        document.getElementById("returnHome").onclick = function () {
+        location.href = "index.html"; };
         function getTotal() {
             // INPUT
             let q1 = 0;
