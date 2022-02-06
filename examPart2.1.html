@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam 1 Part 2 Question 1</title>
+</head>
+<body>
+    <h3>Regular Hours</h3>
+    <label class="heading">Enter your regular hours: <input type="text" id="regular" placeholder="40"></label>
+    <h3>Overtime Hours</h3>
+    <label class="heading">Enter your overtime hours: <input type="text" id="ovetime" placeholder="2.5"></label>
+    <div class="processing"><button onclick="calculatePay();">Calculate Pay</button></div>
+    <h3>Gross Pay</h3>
+    <p id="gross"></p>
+    <h3>Taxes</h3>
+    <p id="taxes"></p>
+    <h3>Net Pay</h3>
+    <p id="net"></p>
+    <script>
+        function calculatePay() {
+            // DECLARATIONS
+                const regRate = 15;
+                const overtimeRate = 22.5;
+                const taxRate = .15;
+                let grossPay;
+                let taxes;
+                let netPay;
+            // INPUT
+                const regular = parseFloat(document.querySelector('#regular').value);
+                const overtime = parseFloat(document.querySelector('#overtime').value);
+            // PROCESSING
+                grossPay = (regular * regRate) + (overtime * overtimeRate);
+                taxes = grossPay * taxRate;
+                netPay = grossPay - taxes;
+            // OUTPUT
+                document.querySelector('#gross').innerHTML = `Your gross pay is: $${grossPay.toFixed(2)}`;
+                document.querySelector('#taxes').innerHTML = `Your tax amount is: $${taxes.toFixed(2)}`;
+                document.querySelector('#net').innerHTML = `Your net pay is: $${netPay.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
