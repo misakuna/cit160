@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam 1 Part 2 Question 2</title>
+</head>
+<body>
+    <div class="process"><button id="returnHome">Home</button>
+    <h2>Volume of a Cylinder</h2>
+    <h3>Height</h3>
+    <label class="heading">Enter the height of the cylinder: <input type="text" id="height" placeholder="20"></label>
+    <h3>Radius</h3>
+    <label class="heading">Enter the radius of the cylinder: <input type="text" id="radius" placeholder="4"></label>
+    <div class="processing"><button onclick="calculateVolume();">Calculate Volume</button></div>
+    <h3>Volume of Cylinder</h3>
+    <p id="volume"></p>
+    <script>
+        document.getElementById("returnHome").onclick = function () {
+        location.href = "index.html"; };
+        function calculateVolume() {
+            // DECLARATIONS
+                let volume;
+            // INPUT
+                const height = parseFloat(document.querySelector('#height').value);
+                const radius = parseFloat(document.querySelector('#radius').value);
+            // PROCESSING
+                volume = Math.PI * Math.pow(radius,2) * height;
+            // OUTPUT
+                document.querySelector('#volume').innerHTML = `The cylinder's volume is: ${volume.toFixed(0)}`;
+        }
+    </script>
+</body>
+</html>
