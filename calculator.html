@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="process"><button id="returnHome">Home</button>
+    <h1>Calculator</h1>
+    <span id="num1"></span>
+    <select name="operand" id="operand">
+        <option value="" selected disabled>--Select an Operand--</option>
+        <option value="+">+ Addition</option>
+        <option value="-">- Subtraction</option>
+    </select>    
+    <span id="num2"></span>
+    <input type="text" id="answer">
+    <hr>
+    <button onclick="checkMath()">Check</button>
+    <p id="message"></p>
+
+    <script>
+        document.getElementById("returnHome").onclick = function () {
+        location.href = "index.html"; };
+        const MAX = 11;
+        let num1 = Math.floor(Math.random() * MAX);
+        let num2 = Math.floor(Math.random() * MAX);
+        document.querySelector('#num1').textContent = `${num1}`;
+        document.querySelector('#num2').textContent = `${num2}`;
+
+        function checkMath() {
+            //INPUT
+                let operand = document.querySelector("#operand").value;
+                let userAnswer = parseInt(document.querySelector("#answer").value);
+
+            //PROCESSING
+                let answerKey = 0;
+                let message = '';
+                if (operand === "+") {
+                    answerKey = num1 + num2;
+                } else if (operand === "-") {
+                    answerKey = num1 - num2;
+                } else {
+                    message = "Please select an operand";
+                }
+                if (answerKey) {
+                    if (answerKey === userAnswer) {
+                        message = "Correct! 🏆";
+                    } else {
+                        message = "Incorrect 😢";
+                    }
+                }
+                
+            //OUTPUT
+                document.querySelector('#message').textContent = message;
+        }
+        
+    </script>
+</body>
+</html>
