@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footwear</title>
+</head>
+<body>
+    <div class="process"><button id="returnHome">Home</button>
+    <h1>Footwear</h1>
+    <select name="footwear" id="footwear">
+        <option value="" selected disabled>--Select the current weather--</option>
+        <option value="hot">Hot</option>
+        <option value="rain">Rain</option>
+        <option value="snow">Snow</option>
+        <option value="unknown">Unknown</option>
+    </select>
+    <p id="message"></p>
+    <script>
+        document.getElementById("returnHome").onclick = function () {
+        location.href = "index.html"; };
+        const select = document.querySelector('#footwear');
+        select.addEventListener('change', selectShoes);
+        function selectShoes() {
+            //INPUT
+                let weather = document.querySelector('#footwear').value;
+                let message = "";
+                let footwear = "";
+            //PROCESSING
+                if (weather == "hot") {
+                    footwear = "sandals";
+                    message = `It would be best if you wore ${footwear} today`;
+                } else if (weather == "rain") {
+                    footwear = "galoshes";
+                    message = `It would be best if you wore ${footwear} today`;
+                } else if (weather == "snow") {
+                    footwear = "boots";
+                    message = `It would be best if you wore ${footwear} today`;
+                } else {
+                    footwear = "shoes";
+                    message = `It would be best if you wore ${footwear} today`;
+                }
+            //OUTPUT
+                document.querySelector('#message').textContent = message;
+        }
+    </script>
+</body>
+</html>
