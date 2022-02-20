@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/numbers.css">
+    <title>Discount</title>
+</head>
+<body>
+    <header>
+        <div class="process"><button id="returnHome">Home</button>
+        <h1>Week 7: Store Discount</h1>
+        <h2>James Misa</h2>
+    </header>
+    <main>
+        <label for="subtotal">Enter the subtotal: </label>
+        <input type="text" id="subtotal">
+        <label><button onclick="calculateDicount()">Calculate Total</button></label>
+        <hr>
+
+        <p id="mySubtotal"></p>
+        <p id="discount"></p>
+        <p id="tax"></p>
+        <p id="total"></p>
+    </main>
+    <footer>
+        &copy;<span id="copyright"></span> &bull; James Misa &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+        document.getElementById("returnHome").onclick = function () {
+        location.href = "index.html"; };
+        function calculateDicount() {
+            // INITIALIZE
+            let mySubtotal = "";
+            let discount = 0;
+            let tax = "";
+            let total = "";
+            const now = new Date();
+            // INPUT
+            let subtotal = parseInt(document.querySelector('#subtotal').value);
+            const theDay = now.getDay();
+            // PROCESSING
+            if (subtotal > 50 && (theDay == 2 || theDay == 6)) {
+                discount = 0.1;
+            } 
+            subtotal -= subtotal * discount;
+            tax = subtotal * .06;
+            total = subtotal + tax;
+
+            // OUTPUT
+            document.querySelector('#mySubtotal').textContent = `Your discounted subtotal is $${subtotal.toFixed(2)}.`;
+            document.querySelector('#tax').textContent = `Your tax amount is $${tax.toFixed(2)}.`;
+            document.querySelector('#total').textContent = `Your total amount due is $${total.toFixed(2)}.`;
+        }
+    </script>
+</body>
+</html>
